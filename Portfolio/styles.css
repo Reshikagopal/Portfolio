@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0A192F;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  padding: 20px;
+}
+
+nav ul.menu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+nav ul.menu li {
+  margin-left: 20px;
+}
+
+nav ul.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+}
+
+.hero-content h2 {
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.typewriter {
+  font-size: 30px;
+  color: #08FDD8;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #08FDD8;
+  width: 0;
+  animation: typewriter 2s steps(30) 1s forwards, blink 1s step-end infinite alternate;
+}
+
+.hero-content p {
+  margin: 20px 0;
+}
+
+.hero-content .description {
+  max-width: 600px;
+  font-size: 16px;
+}
+
+.hero-content .social-icons {
+  margin: 20px 0;
+}
+
+.hero-content .social-icons a {
+  text-decoration: none;
+  color: #08FDD8;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.hero-content .btn {
+  background-color: #08FDD8;
+  padding: 10px 20px;
+  border: none;
+  color: #0A192F;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Profile image styles */
+.hero-image img {
+  width: 300px; /* Set a default size */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling */
+}
+
+.hero-image img:hover {
+  transform: scale(1.1); /* Slightly increase the size on hover */
+  box-shadow: 0px 10px 20px rgba(0, 255, 232, 0.5); /* Add a shadow on hover */
+}
+
+
+
+.hero-image {
+  position: relative;
+  background-color: #08FDD8;
+  border-radius: 50%; /* Match the container shape to the circular image */
+  padding: 10px;
+  display: inline-block; /* Ensures the container fits the image */
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 255, 232, 0.1);
+  border-radius: 50%;
+}
+
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: #08FDD8; }
+}
+
+/* About Section */
+.about-section {
+  background-color: #112240; /* Dark background */
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initial position */
+  transition: opacity 2s ease, transform 2s ease; /* Smooth transition */
+}
+
+.about-section.show {
+  opacity: 1; /* Make visible */
+  transform: translateY(0); /* Move to final position */
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #08FDD8; /* Accent color */
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.about-details {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-details p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.about-details p strong {
+  color: #08FDD8;
+}
+
+
+/* Keyframes for animation */
+@keyframes smoothFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 3;
+    transform: translateY(0);
+  }
+}
+
+.about-section.show {
+  animation: smoothFadeInUp 2s ease-out forwards; /* Apply the animation */
+}
+
+
+
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Skills Section */
+.skills-section {
+  background-color: #f0f0f0; /* Alternate light background for the section */
+  padding: 100px 0;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #08FDD8;
+}
+
+.skills-row {
+  margin-bottom: 60px;
+}
+
+.skills-row h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skill-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.skill-logos img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.skill-logos img:hover {
+  transform: scale(1.1);
+}
+
+.animate-left {
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.animate-right {
+  animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.skills-section {
+  background-color: #0A192F; /* Dark background */
+  padding: 50px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #08FDD8;
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease; /* Smooth fade-in */
+  margin-bottom: 40px; /* Space between rows */
+}
+
+.skills-row.show {
+  opacity: 1; /* Make visible */
+}
+
+/* Keyframes for animation */
+@keyframes slideFromLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideFromRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.skills-row.animate-left .skill-logo {
+  animation: slideFromLeft 1s ease-in-out; /* Animation from left to right */
+}
+
+.skills-row.animate-right .skill-logo {
+  animation: slideFromRight 1s ease-in-out; /* Animation from right to left */
+}
+
+.skill-logo {
+  width: 80px; /* Set a fixed width for logos */
+  height: 80px; /* Set a fixed height for logos to maintain aspect ratio */
+  border-radius: 50%; /* Make logos circular */
+  margin: 0 15px; /* Space between logos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  object-fit: cover; /* Ensure logo covers the circle */
+}
+
+
+/* Portfolio Section */
+.portfolio-section {
+  background-color:  #112240;; /* Dark background */
+  color: #fff;
+  padding: 100px 0;
+}
+
+.portfolio-section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #08FDD8;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  background-color: #112240;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.portfolio-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.portfolio-item p {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.portfolio-item .btn {
+  background-color: #08FDD8;
+  padding: 10px 20px;
+  border: none;
+  color: #0A192F;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-20px);
+  
+  /* Slight lift on hover */
+}
+
+
+
+
+/* Contact Section */
+.contact-section {
+  background-color: #0A192F;   
+  padding: 100px 0;
+  color: #fff;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #08FDD8;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contact-info strong {
+  color: #08FDD8;
+}
+
+
+.social-icons a {
+  text-decoration: none;
+  color: #08FDD8;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
